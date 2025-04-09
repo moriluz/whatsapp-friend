@@ -37,12 +37,6 @@ def generate_dalle_image(prompt):
     )
     return response['data'][0]['url']
 
-
-# def generate_github_response(prompt):
-#     headers = {"Authorization": "Bearer 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"}
-#     response = requests.get(f"https://api.github.com/search/repositories?q={prompt}+in:name", headers=headers)
-
-
 @app.route("/webhook", methods=["POST"])
 def webhook():
     incoming_msg = request.values.get("Body", "").lower()
